@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Shortlink;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 class ShortlinkController extends Controller
@@ -88,19 +89,10 @@ class ShortlinkController extends Controller
         }
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Shortlink $shortlink)
-    {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Shortlink $shortlink)
+    public function get_most_three_links()
     {
-        //
+        $most_links = DB::table('shortlinks')->orderBy('nb_visit', 'desc')->take(3)->get();
+        return response()->json($most_links);
     }
 }

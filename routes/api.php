@@ -21,3 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/generate_shortlink', [ShortlinkController::class, 'store']);
 Route::get('/get_links_data', [ShortlinkController::class, 'index']);
 Route::post('/nbvisit', [ShortlinkController::class, 'count_visit']);
+Route::get('/get_most_links', [ShortlinkController::class, 'get_most_three_links']);

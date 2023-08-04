@@ -13,11 +13,7 @@ import { createApp } from 'vue';
  * to use in your application's views. An example is included for you.
  */
 import App from './App.vue';
-import Router from './router';
 const app = createApp(App);
-//app.use(BootstrapVue);
-app.use(Router);
-
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
