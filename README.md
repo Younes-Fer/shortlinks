@@ -48,10 +48,12 @@ DB_PASSWORD= # Password
 
 ## Tester l'application
 
-# for backend
+### run command
 
 -   php artisan serve
 
-# for frontend
-
 -   npm run dev
+
+## Open url
+
+-   http://127.0.0.1:8000
