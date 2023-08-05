@@ -11,13 +11,13 @@
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+-   [Simple, fast routing engine](https://laravel.com/docs/routing).
+-   [Powerful dependency injection container](https://laravel.com/docs/container).
+-   Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+-   Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+-   Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+-   [Robust background job processing](https://laravel.com/docs/queues).
+-   [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
@@ -33,3 +33,25 @@ If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Lar
 
 ![Alt text](screencapture-127-0-0-1-8000-2023-08-04-16_38_17.png)
 
+## Base de données, migration
+
+-   php artisan migrate
+
+## .env
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1 # Host Name
+DB_PORT=3306
+DB_DATABASE=shortlink_db # Database Name
+DB_USERNAME=root # User Name
+DB_PASSWORD= # Password
+
+## Tester l'application
+
+# for backend
+
+-   php artisan serve
+
+# for frontend
+
+-   npm run dev

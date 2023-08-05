@@ -33,8 +33,10 @@ class ShortlinkController extends Controller
     {
         try {
 
-            $validated  = $request->validate([
+            $this->validate($request, [
                 'url' => 'required|url'
+            ], [
+                'url' => 'The URL field  is Empty !!!'
             ]);
             $generate_code =  Str::random(7);
             $created = Shortlink::create([

@@ -14,7 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route for display index page
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+// Route for redirect visiters to original url
 Route::get('/{shorturl}', [ShortlinkController::class, 'show']);

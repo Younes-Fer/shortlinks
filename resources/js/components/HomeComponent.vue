@@ -3,7 +3,8 @@
         <div class="row justify-content-center py-5">
             <div
                 v-if="alert"
-                class="alert alert-success alert-dismissible fade show"
+                class="alert alert-dismissible fade show"
+                :class="className"
                 role="alert"
             >
                 {{ msg_alert }}
@@ -30,8 +31,12 @@
                             v-model="url"
                             placeholder="Enter URL"
                             @submit.prevent="senData()"
+                            required
                         />
-                        <button class="btn btn-success col-md-2 col-lg-2">
+
+                        <button
+                            class="btn btn-success btn-generate col-md-2 col-lg-2"
+                        >
                             Generate Short Link
                         </button>
                     </div>
@@ -103,10 +108,10 @@ export default {
         return {
             url: "",
             links: [],
-            counter: 0,
             alert: false,
             msg_alert: "",
             most_links: [],
+            className: "",
         };
     },
     mounted() {
@@ -114,13 +119,19 @@ export default {
         this.get_most_links();
     },
     methods: {
+        // Method for Generate link
         senData() {
             axios
                 .post("http://127.0.0.1:8000/api/generate_shortlink", {
                     url: this.url,
                 })
                 .then((rep) => {
-                    console.log(rep.data);
+                    console.log(rep.status);
+                    this.className =
+                        rep.data === "Link generate with successfully"
+                            ? "alert-success"
+                            : "alert-danger";
+                    console.log(this.className);
                     this.alert = true;
                     this.msg_alert = rep.data;
                     this.url = "";
@@ -129,6 +140,8 @@ export default {
                     console.log(error.data);
                 });
         },
+
+        // Method for Get data links
         getData() {
             axios
                 .get("http://127.0.0.1:8000/api/get_links_data")
@@ -140,6 +153,8 @@ export default {
                     console.log(error.data);
                 });
         },
+
+        // Method for Count number clicks
         count_click(id, nbclick) {
             axios
                 .post("http://127.0.0.1:8000/api/nbvisit", {
@@ -154,6 +169,8 @@ export default {
                     console.log(error.data);
                 });
         },
+
+        // Method for Get most links
         get_most_links() {
             axios
                 .get("http://127.0.0.1:8000/api/get_most_links")
@@ -171,5 +188,9 @@ export default {
 <style>
 body {
     background-color: rgb(232, 246, 248);
+}
+.btn-generate {
+    font-size: 16.5px;
+    font-weight: bold;
 }
 </style>
