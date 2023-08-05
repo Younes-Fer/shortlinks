@@ -40,10 +40,15 @@ If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Lar
 ## .env
 
 DB_CONNECTION=mysql
+
 DB_HOST=127.0.0.1 # Host Name
+
 DB_PORT=3306
+
 DB_DATABASE=shortlink_db # Database Name
+
 DB_USERNAME=root # User Name
+
 DB_PASSWORD= # Password
 
 ## Tester l'application
