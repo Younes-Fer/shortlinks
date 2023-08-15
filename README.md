@@ -59,6 +59,5 @@ DB_PASSWORD= # Password
 
 -   npm run dev
 
-## Open url
 
--   http://127.0.0.1:8000
+
