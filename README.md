@@ -34,11 +34,11 @@ If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Lar
 ![Alt text](screencapture-127-0-0-1-8000-2023-08-04-16_38_17.png)
 
 ## Base de données, migration
-
--   php artisan migrate
-
+```bash
+  php artisan migrate
+```
 ## .env
-
+```bash
 DB_CONNECTION=mysql
 
 DB_HOST=127.0.0.1 # Host Name
@@ -50,14 +50,13 @@ DB_DATABASE=shortlink_db # Database Name
 DB_USERNAME=root # User Name
 
 DB_PASSWORD= # Password
-
+```
 ## Tester l'application
 
 ### run command
-
--   php artisan serve
-
--   npm run dev
-
-
-
+```bash
+ php artisan serve
+```
+```bash
+ npm run dev
+```
